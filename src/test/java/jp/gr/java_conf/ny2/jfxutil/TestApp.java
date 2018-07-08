@@ -32,6 +32,8 @@ public class TestApp extends Application {
         primaryStage.show();
         
         SingleDialogUtility.showErrorMessage("MAIN", "TEST");
+        SingleDialogUtility.showErrorMessage("MAIN", "TEST2");
+        SingleDialogUtility.showErrorMessage("MAIN", "TEST3");
     }
 
 }

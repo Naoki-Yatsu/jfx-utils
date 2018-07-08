@@ -12,7 +12,7 @@ import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
 import javafx.stage.Stage;
 
-class SingleDialogController {
+public class SingleDialogController {
     
     // //////////////////////////////////////
     // Field
@@ -44,11 +44,18 @@ class SingleDialogController {
         logger.info("Initializd.");
         
         // Create a TreeTableView with model
+        messageTable.setShowRoot(false);
         
         // Create three columns
         timeColumn.setCellValueFactory(c -> c.getValue().getValue().dateTimeProperty());
         sourceColumn.setCellValueFactory(c -> c.getValue().getValue().sourceScreenProperty());
         messageColumn.setCellValueFactory(c -> c.getValue().getValue().messageHeaderProperty());
+        
+        // Root
+        TreeItem<ErrorInfo> root = new TreeItem<>();
+        messageTable.setRoot(root);
+
+        
     }
 
     // //////////////////////////////////////
